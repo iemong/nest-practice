@@ -3,11 +3,7 @@ import { BadRequestException, PipeTransform } from '@nestjs/common';
 type Status = 'OPEN' | 'PROGRESS' | 'DONE';
 
 export class TaskStatusPipe implements PipeTransform {
-  private readonly allowStatus: Status[];
-
-  constructor() {
-    this.allowStatus = ['OPEN', 'PROGRESS', 'DONE'];
-  }
+  allowStatus = ['OPEN', 'PROGRESS', 'DONE'];
 
   transform(value: any) {
     value = value.toUpperCase();
