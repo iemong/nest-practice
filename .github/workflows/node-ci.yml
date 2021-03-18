@@ -20,5 +20,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: yarn --frozen-lockfile
-    - run: yarn prebuild
+    - run: yarn lint
     - run: yarn test
+    - run: yarn prebuild
